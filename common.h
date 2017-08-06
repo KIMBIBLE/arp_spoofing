@@ -15,21 +15,6 @@
 const int PCAP_ERROR_READ_PACKET = -1;
 const int PCAP_ERROR_NO_MORE_PACKET = -2;
 
-#define print_msg(io, msgtype, arg...) \
-    flockfile(io); \
-    fprintf(io, "["#msgtype"] [%s/%s:%03d] ", __FILE__, __FUNCTION__, __LINE__); \
-    fprintf(io, arg); \
-    fputc('\n', io); \
-    funlockfile(io)
-
-#define print_msg_no_enter(io, msgtype, arg...) \
-    flockfile(io); \
-    fprintf(io, "["#msgtype"] [%s/%s:%03d] ", __FILE__, __FUNCTION__, __LINE__); \
-    fprintf(io, arg); \
-    funlockfile(io)
-
-#define pr_err(arg...) print_msg(stderr, ERR, arg)
-#define pr_out(arg...) print_msg(stdout, REP, arg)
-#define pr_out_n(arg...) print_msg_no_enter(stdout, REP, arg)
+void error_handling(const char * message, const char * file_name, const char * func_name, int line_number);
 
 #endif
