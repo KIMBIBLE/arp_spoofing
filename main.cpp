@@ -3,6 +3,7 @@
 #include "str2hex.h"
 #include "common.h"
 #include "ip.h"
+#include "mac.h"
 
 using namespace std;
 
@@ -24,6 +25,10 @@ int main(int argc, char * argv[])
 	Ip local_ip;
 	local_ip.parse_local_ip();
 	cout << "[*] local IP addr\t: " << local_ip << endl;
+
+	Mac loacl_mac;
+	loacl_mac.parse_local_mac();
+	cout << "[*] local MAC addr\t: " << loacl_mac << endl;
 
 	return 0;
 }

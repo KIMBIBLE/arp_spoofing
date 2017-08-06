@@ -15,5 +15,5 @@ bool str2hexIp(const char *string_ip, uint8_t *hex_ip)
 	if(4 != sscanf(string_ip, "%hhd.%hhd.%hhd.%hhd", hex_ip, hex_ip + 1 , hex_ip + 2, hex_ip + 3))
 		return false;
 
-	return false;
+	return true;
 }

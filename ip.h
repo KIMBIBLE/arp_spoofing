@@ -23,7 +23,6 @@ public:
 
 private:
 	uint8_t hex_ip[HEX_IP_LEN];
-	uint8_t hex_mac[HEX_MAC_LEN];	
 
 };
 

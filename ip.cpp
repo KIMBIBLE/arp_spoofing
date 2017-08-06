@@ -5,17 +5,17 @@
 using namespace std;
 
 Ip::Ip(){
-	if(str2hexIp("0.0.0.0", hex_ip))
+	if(str2hexIp("0.0.0.0", hex_ip) == false)
 		error_handling("IP convert error", ERR_INFO);
 }
 
 Ip::Ip(const char *ip_str){
-	if(str2hexIp(ip_str, hex_ip))
+	if(str2hexIp(ip_str, hex_ip) == false)
 		error_handling("IP convert error", ERR_INFO);
 }
 
 void Ip::setIp(const char *ip_str){
-	if(str2hexIp(ip_str, hex_ip))
+	if(str2hexIp(ip_str, hex_ip) == false)
 		error_handling("IP convert error", ERR_INFO);
 }
 
@@ -24,7 +24,7 @@ void Ip::getIp(uint8_t *ip_buf){
 }
 
 Ip Ip::operator=(const char *ip_str){
-	if(str2hexIp(ip_str, hex_ip))
+	if(str2hexIp(ip_str, hex_ip) == false)
 		error_handling("IP convert error", ERR_INFO);
 }
 
